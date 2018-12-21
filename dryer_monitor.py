@@ -12,4 +12,4 @@ def isVibrating():
     return GPIO.input(input_channel)
 
 if __name__ == '__main__':
-    main()
+    print(main())

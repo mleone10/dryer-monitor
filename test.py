@@ -4,9 +4,8 @@ from unittest.mock import patch
 import dryer_monitor
 
 class TestDryerMonitor(unittest.TestCase):
-    @patch('dryer_monitor.RPi')
-    @patch('dryer_monitor.RPi.GPIO')
-    def test_debug(self, mock_gpio, mock_rpi):
+    @patch('dryer_monitor.GPIO')
+    def test_override_gpio_input(self, mock_gpio):
         mock_gpio.input.return_value = True
         self.assertEqual(dryer_monitor.main(), True)
 
